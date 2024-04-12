@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+// import Popup from './Components/Popup/Popup'
+import {useState, useEffect} from 'react';
 
 function App() {
+  const [now, setNow] = useState(new Date().toLocaleTimeString());
+  setInterval(()=>setNow(new Date().toLocaleTimeString()),1000);
+  const [open, setOpen] = useState(false);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>{now}</h1>
+     <button onClick={()=>{setOpen(true) }} type='button' className='btn btn-success'>Открыть модальное окно</button>
+     {/* условный рендер модального окна */}
+     {open &&  ( <div className="popup">
+      <div className='wrap'>
+        <p className="modal-txt">Это простое модальное окно!</p>
+        <button type='button' onClick={()=>setOpen(false)} className="modalCloseItem">&times;</button>           
+      </div>  
+        </div>) }
+    
     </div>
+    
   );
 }
 
 export default App;
+

@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+.container{
+ text-align: center;
+}
+.btn-success{
+  margin-top: 50px;
+}
+.wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popup{
+  width: 25;
+  padding: 0 30px 30px 30px;
+  position: absolute;
+  top: 200px;
+  left: 37.5%;
+  background: rgb(195, 225, 195);
+  border-radius: 15px;
+  font-size: 18px;
+  animation-name: modal;
+	-webkit-animation-name: modal;	
+	animation-duration: .7s;	 
+	animation-timing-function: ease-in-out;	
+}
+
+.modal-txt{
+  margin-right: 30px;
+  padding-top: 30px;
+  color: green;
+ 
+}
+.modalCloseItem{
+  width: 25px;
+  height: 30px;
+display: block;
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 28px;
+
+}
+@keyframes modal {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;		
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;	
+	}		
+}
